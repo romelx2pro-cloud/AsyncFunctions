@@ -190,15 +190,40 @@
 // function login(uName,pass) {
 
 // }
-const login = async (uName, pass) => {
-  if (!uName || !pass) throw "missing credentials";
-  if (pass === 1) return "wc";
-  throw "invalid pass";
-};
-login("a", 1)
-  .then((m) => {
-    console.log("li", m);
-  })
-  .catch((e) => {
-    console.log("err", e);
+// const login = async (uName, pass) => {
+//   if (!uName || !pass) throw "missing credentials";
+//   if (pass === 1) return "wc";
+//   throw "invalid pass";
+// };
+// login("a", 1)
+//   .then((m) => {
+//     console.log("li", m);
+//   })
+//   .catch((e) => {
+//     console.log("err", e);
+//   });
+function rgb(c, d) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      document.body.style.backgroundColor = c;
+      resolve("scs");
+    }, d);
   });
+}
+async function bcc() {
+  await rgb("red", 1000);
+  console.log("r");
+  await rgb("green", 1000);
+  console.log("g");
+  await rgb("blue", 1000);
+  console.log("b");
+  return "bcc end1";
+}
+// bcc().then((d) => {
+//   console.log("end", d);
+// });
+async function bccf() {
+  await bcc();
+  console.log("bccf");
+}
+bccf();
