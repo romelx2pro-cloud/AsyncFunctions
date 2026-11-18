@@ -150,27 +150,55 @@
 //     console.log("error", err);
 //   });
 
-const delayedColorChange = (color, delay) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      document.body.style.backgroundColor = color;
-      resolve();
-    }, delay);
-  });
+// const delayedColorChange = (color, delay) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       document.body.style.backgroundColor = color;
+//       resolve();
+//     }, delay);
+//   });
+// };
+// async function rainbow() {
+//   await delayedColorChange("red", 1000);
+//   console.log("r");
+//   await delayedColorChange("green", 1000);
+//   console.log("g");
+//   await delayedColorChange("blue", 1000);
+//   console.log("b");
+//   return "ALL DONE!";
+// }
+// // rainbow().then((res) => {
+// //   console.log("end r", res);
+// // });
+// async function printRainbow() {
+//   await rainbow();
+//   console.log("end");
+// }
+// async function name() {}
+// const sing = async () => {
+//   // asdasd.asdasdas();
+//   throw "OH NO , Prob!";
+//   return "lalala";
+// };
+// sing()
+//   .then((data) => {
+//     console.log("res", data);
+//   })
+//   .catch((err) => {
+//     console.log("rej", err);
+//   });
+// function login(uName,pass) {
+
+// }
+const login = async (uName, pass) => {
+  if (!uName || !pass) throw "missing credentials";
+  if (pass === 1) return "wc";
+  throw "invalid pass";
 };
-async function rainbow() {
-  await delayedColorChange("red", 1000);
-  console.log("r");
-  await delayedColorChange("green", 1000);
-  console.log("g");
-  await delayedColorChange("blue", 1000);
-  console.log("b");
-  return "ALL DONE!";
-}
-// rainbow().then((res) => {
-//   console.log("end r", res);
-// });
-async function printRainbow() {
-  await rainbow();
-  console.log("end");
-}
+login("a", 1)
+  .then((m) => {
+    console.log("li", m);
+  })
+  .catch((e) => {
+    console.log("err", e);
+  });
